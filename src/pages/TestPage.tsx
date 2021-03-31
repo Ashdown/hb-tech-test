@@ -1,5 +1,7 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
+import { useQuery } from 'react-query'
+import surveys from '../data/surveys.json'
 
 const useStyles = createUseStyles({
     root: {
@@ -21,6 +23,21 @@ const useStyles = createUseStyles({
 function TestPage(): React.ReactElement {
 
     const styles = useStyles()
+
+    // const { isLoading, error, data } = useQuery('repoData', () =>
+    //     fetch('https://api.github.com/repos/tannerlinsley/react-query').then(res =>
+    //         res.json()
+    //     )
+    // )
+
+    const { isLoading, error, data } = useQuery('repoData', () =>
+        fetch('https://api.github.com/repos/tannerlinsley/react-query').then(res =>
+            surveys
+        )
+    )
+
+    console.log('isLoading', isLoading)
+    console.log('data', data)
 
     return (
         <div className={styles.root}>
