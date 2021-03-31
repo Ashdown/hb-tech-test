@@ -4,14 +4,15 @@ import {
   Switch,
   Route,
 } from 'react-router-dom';
-import TestPage from './pages/TestPage';
+import SurveyListPage from './pages/SurveyListPage';
+
 
 function AppRouter(): React.ReactElement {
   return (
     <Router>
       <Switch>
-        <Route path="/test">
-          <TestPage />
+        <Route path="/">
+          <SurveyListPage />
         </Route>
       </Switch>
     </Router>
