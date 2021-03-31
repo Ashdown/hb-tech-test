@@ -6,7 +6,6 @@ import {
 } from 'react-router-dom';
 import SurveyListPage from './pages/SurveyListPage';
 
-
 function AppRouter(): React.ReactElement {
   return (
     <Router>
